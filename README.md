@@ -90,19 +90,11 @@ Se configuró una VPN IPsec entre FGT-HQ y BRANCH.
 
 La comunicación entre la VLAN 10 y la red de servidores se realiza mediante el túnel VPN.
 
-![VPN activa](15_vpn_up.png)
-
 Se verificó el recorrido hacia el Web Server mediante traceroute.
-
-![Traceroute VPN](16_vpn_trace.png)
 
 Al deshabilitar la VPN, la comunicación con el servidor dejó de funcionar.
 
-![VPN deshabilitada](17_vpn_down.png)
-
 Al habilitar nuevamente el túnel, la conectividad fue restablecida.
-
-![VPN restaurada](18_vpn_restaurada.png)
 
 ## Servidor Web
 
