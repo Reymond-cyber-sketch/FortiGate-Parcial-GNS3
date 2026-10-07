@@ -4,6 +4,7 @@
 
 [Ver video en YouTube]((https://www.youtube.com/watch?v=niOl9BpEW3w))
 
+
 ## Propósito
 
 El objetivo de este laboratorio es implementar y demostrar una infraestructura de red segmentada y protegida mediante FortiGate, incluyendo VLANs, salida a Internet, NAT, VPN IPsec, filtrado web, control de acceso al servidor Web y registro de tráfico.
