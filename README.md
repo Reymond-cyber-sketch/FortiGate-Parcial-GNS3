@@ -104,21 +104,13 @@ El Web Server utiliza la dirección:
 
 El servicio HTTP está disponible por el puerto TCP 80.
 
-![Web Server operativo](10_web_operativo.png)
-
 ## Acceso HTTP desde VLAN 10
 
 La política del FortiGate permite a los usuarios de VLAN 10 acceder al Web Server únicamente utilizando HTTP por el puerto 80.
 
-![Política HTTP](07_policy_http.png)
-
 Se comprobó que el puerto TCP 80 está permitido.
 
-![HTTP permitido](08_http_80_permitido.png)
-
 Otros servicios hacia el Web Server, como TCP 443, son bloqueados.
-
-![Servicio bloqueado](09_otros_servicios_bloqueados.png)
 
 ## Web Filter
 
@@ -128,19 +120,11 @@ Se configuró el perfil `WF-INVENTARIO` para restringir el acceso desde VLAN 10 
 
 La página principal del servidor continúa disponible, mientras que `/inventario/` es bloqueado.
 
-![Web Filter](12_webfilter_gui.png)
-
-![Inventario bloqueado](11_inventario_bloqueado.png)
-
 ## Registros de seguridad
 
 El FortiGate registra los intentos de acceso a servicios no permitidos mediante Forward Traffic.
 
-![Forward Traffic](13_forward_traffic_deny.png)
-
 Los eventos relacionados con el bloqueo de `/inventario/` también quedan registrados por el Web Filter.
-
-![Web Filter Log](14_webfilter_log.png)
 
 ## Servidor de Base de Datos
 
@@ -149,8 +133,6 @@ El DB Server utiliza:
 `192.168.30.3/28`
 
 MariaDB se encuentra escuchando mediante TCP en el puerto `3306`.
-
-![MariaDB](19_db_mariadb.png)
 
 ## Archivos de configuración
 
