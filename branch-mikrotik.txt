@@ -1,0 +1,24 @@
+/system identity
+set name=BRANCH
+
+/ip address
+add address=10.0.20.2/30 interface=ether2
+add address=192.168.30.1/28 interface=ether3
+
+/ip route
+add dst-address=0.0.0.0/0 gateway=10.0.20.1
+
+/ip ipsec profile
+add name=FGT-IKE enc-algorithm=des hash-algorithm=sha1 dh-group=modp1024
+
+/ip ipsec peer
+add name=FGT-HQ address=10.0.10.2/32 local-address=10.0.20.2 exchange-mode=main profile=FGT-IKE
+
+/ip ipsec identity
+add peer=FGT-HQ auth-method=pre-shared-key
+
+/ip ipsec proposal
+add name=FGT-P2 auth-algorithms=sha1 enc-algorithms=des pfs-group=none
+
+/ip ipsec policy
+add src-address=192.168.30.0/28 dst-address=192.168.10.0/24 tunnel=yes peer=FGT-HQ proposal=FGT-P2

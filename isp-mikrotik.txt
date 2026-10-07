@@ -1,0 +1,15 @@
+/system identity
+set name=ISP
+
+/ip address
+add address=10.0.10.1/30 interface=ether3
+add address=10.0.20.1/30 interface=ether4
+
+/ip dhcp-client
+add interface=ether2 add-default-route=yes use-peer-dns=yes disabled=no
+
+/ip firewall nat
+add chain=srcnat out-interface=ether2 action=masquerade
+
+/ip dns
+set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes
